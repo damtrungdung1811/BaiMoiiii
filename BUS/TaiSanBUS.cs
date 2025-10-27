@@ -7,9 +7,10 @@ namespace BaiMoiiii.BUS
     {
         private readonly TaiSanDAL _dal;
 
-        public TaiSanBUS(IConfiguration config)
+        // ✅ Nhận string thay vì IConfiguration
+        public TaiSanBUS(string connectionString)
         {
-            _dal = new TaiSanDAL(config);
+            _dal = new TaiSanDAL(connectionString);
         }
 
         public List<TaiSan> GetAll() => _dal.GetAll();
